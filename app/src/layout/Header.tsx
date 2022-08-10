@@ -86,7 +86,7 @@ const Header = ({ handleDrawerOpen, layout, ...others }: Props) => {
             <Stack direction="row" sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }} alignItems="center">
               <Typography component="div" sx={{ textAlign: 'left', display: 'inline-block' }}>
                 {/* logo function */}
-                <Logo reverse to="/" />
+                <Logo reverse to="/" sx={{ pt: 0.4 }} />  {/* added sx={{ pt: 0.4 }} for paddingTop to align logo with version <Chip> */}
               </Typography>
               {/* chip version number */}
               <Chip

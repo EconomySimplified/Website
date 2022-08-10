@@ -12,6 +12,8 @@ import AnimateButton from 'components/@extended/AnimateButton';
 // assets
 import { SendOutlined } from '@ant-design/icons';
 
+import Logo from 'components/logo';
+import LogoMainFooter from 'components/logo/LogoMainFooter';
 /* const imgfooterlogo = 'assets/images/landing/codedthemes-logo.svg'; */ /* image footer logo */
 const imgfooterlogo = 'assets/images/landing/EconomySimplified-Logo.png';
 const imgfootersoc1 = 'assets/images/landing/img-soc1.svg';
@@ -146,7 +148,7 @@ const FooterBlock = ({ isFull }: showProps) => {
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
                     {/* <CardMedia component="img" image={imgfooterlogo} sx={{ width: 'auto' }} /> */}
-                    <CardMedia component="img" image={imgfooterlogo} sx={{ width: '90%' }} />
+                    <LogoMainFooter/>
                   </Grid>
                   <Grid item xs={12}>
                     <Typography variant="subtitle1" sx={{ fontWeight: 400, color: theme.palette.common.white }}>
