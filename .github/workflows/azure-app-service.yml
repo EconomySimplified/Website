@@ -23,7 +23,7 @@ env:
   APP_NAME_BETA: economy-simplified-beta
   APP_URL: https://economy-simplified.azurewebsites.net
   APP_URL_BETA: https://economy-simplified-beta.azurewebsites.net
-  APP_DIR: Infrastructure/Web/app
+  APP_DIR: app
 
 jobs:
   build:
