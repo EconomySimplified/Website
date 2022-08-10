@@ -90,3 +90,5 @@ Paste the following in the `AZUREAPPSERVICE_PUBLISHPROFILE` repository secret.
 Startup Command must be the below for Node.js applications.
 
 `/home/site/wwwroot/node_modules/next/dist/bin/next start -p $PORT`
+
+Test
