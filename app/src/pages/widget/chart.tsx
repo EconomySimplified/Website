@@ -27,7 +27,7 @@ import IconButton from 'components/@extended/IconButton';
 import UsersCardChart from 'sections/dashboard/analytics/UsersCardChart';
 import OrdersCardChart from 'sections/dashboard/analytics/OrdersCardChart';
 import SalesCardChart from 'sections/dashboard/analytics/SalesCardChart';
-import MarketingCardChart from 'sections/dashboard/analytics/MarketingCardChart';
+import MarketingCardChart from 'sections/dashboard/crypto/CryptoOpeningChart';
 import AnalyticsDataCard from 'components/cards/statistics/AnalyticsDataCard';
 
 import IncomeAreaChart from 'sections/dashboard/default/IncomeAreaChart';

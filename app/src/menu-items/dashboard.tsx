@@ -34,12 +34,60 @@ const dashboard: NavItemType = {
           breadcrumbs: false
         },
         {
-          id: 'analytics',
-          title: <FormattedMessage id="analytics" />,
+          id: 'bond-market',
+          title: <FormattedMessage id="bond-market" />,
           type: 'item',
-          url: '/dashboard/analytics'
+          url: '/dashboard/bond-market'
         },
         {
+          id: 'commodities',
+          title: <FormattedMessage id="commodities" />,
+          type: 'item',
+          url: '/dashboard/commodities'
+        },
+        {
+          id: 'cpi',
+          title: <FormattedMessage id="cpi" />,
+          type: 'item',
+          url: '/dashboard/cpi'
+        },
+        {
+          id: 'currencies',
+          title: <FormattedMessage id="currencies" />,
+          type: 'item',
+          url: '/dashboard/currencies'
+        },
+        {
+          id: 'markets',
+          title: <FormattedMessage id="markets" />,
+          type: 'item',
+          url: '/dashboard/markets'
+        },
+        {
+          id: 'mortgages',
+          title: <FormattedMessage id="mortgages" />,
+          type: 'item',
+          url: '/dashboard/mortgages'
+        },
+        {
+          id: 'national-data',
+          title: <FormattedMessage id="national-data" />,
+          type: 'item',
+          url: '/dashboard/national-data'
+        },
+        {
+          id: 'us-macro-data',
+          title: <FormattedMessage id="us-macro-data" />,
+          type: 'item',
+          url: '/dashboard/us-macro-data'
+        },
+        /*{
+          id: 'playground',
+          title: <FormattedMessage id="playground" />,
+          type: 'item',
+          url: '/dashboard/playground'
+        },*/
+        /*{
           id: 'components',
           title: <FormattedMessage id="components" />,
           type: 'item',
@@ -52,7 +100,7 @@ const dashboard: NavItemType = {
             size: 'small',
             variant: 'combined'
           }
-        }
+        }*/
       ]
     }
   ]
