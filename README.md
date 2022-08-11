@@ -1,3 +1,9 @@
+# Environments
+
+[Production](https://economy-simplified.azurewebsites.net/)
+
+[Staging](https://economy-simplified-beta.azurewebsites.net/)
+
 # Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
