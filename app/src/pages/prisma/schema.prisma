@@ -1,0 +1,219 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model COMMODITY {
+  Symbol   String   @db.VarChar(50)
+  DateTime DateTime @db.DateTime
+  Rate     Decimal? @db.Decimal(18, 2)
+
+  @@id([Symbol, DateTime], map: "PK_COMMODITY_SPY")
+}
+
+model CPI {
+  DateTime         DateTime @id(map: "PK_CPI") @db.DateTime
+  CPIU19821984     Decimal? @db.Decimal(10, 5)
+  CPIUNoFoodEnergy Decimal? @db.Decimal(10, 5)
+}
+
+model CPI_12_Month_Percent_Change {
+  DateTime                     DateTime @id(map: "PK_CPI_12_Month_Percent_Change") @db.DateTime
+  AllItems                     Decimal? @db.Decimal(7, 2)
+  FoodAtHome                   Decimal? @db.Decimal(7, 2)
+  Energy                       Decimal? @db.Decimal(7, 2)
+  Electricity                  Decimal? @db.Decimal(7, 2)
+  AllItemsLessFoodAndEnergy    Decimal? @db.Decimal(7, 2)
+  Apparel                      Decimal? @db.Decimal(7, 2)
+  MedicalCareCommodities       Decimal? @db.Decimal(7, 2)
+  Shelter                      Decimal? @db.Decimal(7, 2)
+  EducationAndCommunication    Decimal? @db.Decimal(7, 2)
+  Food                         Decimal? @db.Decimal(7, 2)
+  FoodAwayFromHome             Decimal? @db.Decimal(7, 2)
+  GasolineAllTypes             Decimal? @db.Decimal(7, 2)
+  NaturalGasPiped              Decimal? @db.Decimal(7, 2)
+  CommoditiesLessFoodAndEnergy Decimal? @db.Decimal(7, 2)
+  NewVehicles                  Decimal? @db.Decimal(7, 2)
+  ServicesLessEnergyServices   Decimal? @db.Decimal(7, 2)
+  MedicalCareServices          Decimal? @db.Decimal(7, 2)
+}
+
+model CPI_Average_Price {
+  DateTime                         DateTime @id(map: "PK_CPI_Average_Price") @db.DateTime
+  BananasPerLb                     Decimal? @db.Decimal(6, 3)
+  BreadWhitePanPerLb               Decimal? @db.Decimal(6, 3)
+  ChickenFreshWholePerLb           Decimal? @db.Decimal(6, 3)
+  EggsGradeALargePerDozen          Decimal? @db.Decimal(6, 3)
+  GroundChuckAllBeefPerLb          Decimal? @db.Decimal(6, 3)
+  MilkFreshWholeFortifiedPerGallon Decimal? @db.Decimal(6, 3)
+  OrangesNavelPerLb                Decimal? @db.Decimal(6, 3)
+  TomatoesFieldGrownPerLb          Decimal? @db.Decimal(6, 3)
+  ElectricityPerKWH                Decimal? @db.Decimal(6, 3)
+  GasolineUnleadedRegularPerGallon Decimal? @db.Decimal(6, 3)
+  UtilityPipedGasPerTherm          Decimal? @db.Decimal(6, 3)
+}
+
+model CRYPTO {
+  Symbol      String   @db.VarChar(50)
+  DateTime    DateTime @db.DateTime
+  Price_Open  Decimal? @db.Decimal(18, 2)
+  Price_Close Decimal? @db.Decimal(18, 2)
+  Price_Low   Decimal? @db.Decimal(18, 2)
+  Price_High  Decimal? @db.Decimal(18, 2)
+  Volume      BigInt?
+
+  @@id([Symbol, DateTime], map: "PK_CRYPTO_SPY")
+}
+
+model FOREX {
+  Symbol   String   @db.VarChar(50)
+  DateTime DateTime @db.DateTime
+  Rate     Decimal? @db.Decimal(18, 2)
+
+  @@id([Symbol, DateTime], map: "PK_FOREX_SPY")
+}
+
+model FRED_Consumer_Credit_Owned_And_Securitized {
+  DateTime DateTime @id(map: "PK_FRED_Consumer_Credit_Owned_And_Securitized") @db.DateTime
+  Value    Decimal? @db.Decimal(9, 4)
+}
+
+model FRED_Consumer_Loans {
+  DateTime DateTime @id(map: "PK_FRED_Consumer_Loans") @db.DateTime
+  Value    Decimal? @db.Decimal(9, 4)
+}
+
+model FRED_Effective_Federal_Funds_Rate {
+  DateTime DateTime @id(map: "PK_FRED_Effective_Federal_Funds_Rate") @db.DateTime
+  Value    Decimal? @db.Decimal(5, 2)
+}
+
+model FRED_GDP {
+  DateTime DateTime @id(map: "PK_FRED_GDP") @db.DateTime
+  USA      Decimal? @db.Decimal(20, 3)
+  India    Decimal? @db.Decimal(20, 3)
+  China    Decimal? @db.Decimal(20, 3)
+  Japan    Decimal? @db.Decimal(20, 3)
+  Germany  Decimal? @db.Decimal(20, 3)
+  UK       Decimal? @db.Decimal(20, 3)
+  SK       Decimal? @db.Decimal(20, 3)
+  Canada   Decimal? @db.Decimal(20, 3)
+}
+
+model FRED_Market_Yield_01Y {
+  DateTime DateTime @id(map: "PK_FRED_Market_Yield_01Y") @db.DateTime
+  Value    Decimal? @db.Decimal(5, 2)
+}
+
+model FRED_Market_Yield_02Y {
+  DateTime DateTime @id(map: "PK_FRED_Market_Yield_02Y") @db.DateTime
+  Value    Decimal? @db.Decimal(5, 2)
+}
+
+model FRED_Market_Yield_10Y {
+  DateTime DateTime @id(map: "PK_FRED_Market_Yield_10Y") @db.DateTime
+  Value    Decimal? @db.Decimal(5, 2)
+}
+
+model FRED_Mortgage_15Y {
+  DateTime DateTime @id(map: "PK_FRED_Mortgage_15Y") @db.DateTime
+  Value    Decimal? @db.Decimal(5, 2)
+}
+
+model FRED_Mortgage_30Y {
+  DateTime DateTime @id(map: "PK_FRED_Mortgage_30Y") @db.DateTime
+  Value    Decimal? @db.Decimal(5, 2)
+}
+
+model FRED_National_Data_Canada {
+  DateTime             DateTime @id(map: "PK_FRED_National_Data_Canada") @db.DateTime
+  LaborForceSize       Decimal? @db.Decimal(15, 5)
+  Unemployment         Decimal? @db.Decimal(7, 5)
+  DiscountInterestRate Decimal? @db.Decimal(8, 5)
+}
+
+model FRED_National_Data_China {
+  DateTime             DateTime @id(map: "PK_FRED_National_Data_China") @db.DateTime
+  DiscountInterestRate Decimal? @db.Decimal(8, 5)
+  Unemployment         Decimal? @db.Decimal(7, 5)
+  LaborForceSize       Decimal? @db.Decimal(15, 5)
+}
+
+model FRED_National_Data_Germany {
+  DateTime             DateTime @id(map: "PK_FRED_National_Data_Germany") @db.DateTime
+  LaborForceSize       Decimal? @db.Decimal(15, 5)
+  DiscountInterestRate Decimal? @db.Decimal(8, 5)
+  Unemployment         Decimal? @db.Decimal(7, 5)
+}
+
+model FRED_National_Data_India {
+  DateTime             DateTime @id(map: "PK_FRED_National_Data_India") @db.DateTime
+  DiscountInterestRate Decimal? @db.Decimal(8, 5)
+  LaborForceSize       Decimal? @db.Decimal(15, 5)
+  Unemployment         Decimal? @db.Decimal(7, 5)
+}
+
+model FRED_National_Data_Japan {
+  DateTime             DateTime @id(map: "PK_FRED_National_Data_Japan") @db.DateTime
+  LaborForceSize       Decimal? @db.Decimal(15, 5)
+  DiscountInterestRate Decimal? @db.Decimal(8, 5)
+  Unemployment         Decimal? @db.Decimal(7, 5)
+}
+
+model FRED_National_Data_South_Korea {
+  DateTime             DateTime @id(map: "PK_FRED_National_Data_South_Korea") @db.DateTime
+  DiscountInterestRate Decimal? @db.Decimal(8, 5)
+  Unemployment         Decimal? @db.Decimal(7, 5)
+  LaborForceSize       Decimal? @db.Decimal(15, 5)
+}
+
+model FRED_National_Data_United_Kingdom {
+  DateTime             DateTime @id(map: "PK_FRED_National_Data_United_Kingdom") @db.DateTime
+  LaborForceSize       Decimal? @db.Decimal(15, 5)
+  Unemployment         Decimal? @db.Decimal(7, 5)
+  DiscountInterestRate Decimal? @db.Decimal(8, 5)
+}
+
+model FRED_Total_Quits {
+  DateTime                   DateTime @id(map: "PK_dbo.FRED_Total_Quits") @db.DateTime
+  TotalNonFarmQuitsThousands Decimal? @db.Decimal(6, 0)
+  TotalPrivateQuitsThousands Decimal? @db.Decimal(6, 0)
+}
+
+model FRED_Total_Unfilled_Job_Vacancies {
+  DateTime DateTime @id(map: "PK_FRED_Total_Unfilled_Job_Vacancies") @db.DateTime
+  Value    Decimal? @db.Decimal(9, 0)
+}
+
+model FRED_Unemployment_Rate {
+  DateTime DateTime @id(map: "PK_FRED_Unemployment_Rate") @db.DateTime
+  Value    Decimal? @db.Decimal(5, 1)
+}
+
+model INDEX {
+  Symbol      String   @db.VarChar(50)
+  DateTime    DateTime @db.DateTime
+  Price_Open  Decimal? @db.Decimal(18, 2)
+  Price_Close Decimal? @db.Decimal(18, 2)
+  Price_Low   Decimal? @db.Decimal(18, 2)
+  Price_High  Decimal? @db.Decimal(18, 2)
+  Volume      BigInt?
+
+  @@id([Symbol, DateTime], map: "PK_INDEX_SPY")
+}
+
+model STOCK {
+  Symbol      String   @db.VarChar(50)
+  DateTime    DateTime @db.DateTime
+  Price_Open  Decimal? @db.Decimal(18, 2)
+  Price_Close Decimal? @db.Decimal(18, 2)
+  Price_Low   Decimal? @db.Decimal(18, 2)
+  Price_High  Decimal? @db.Decimal(18, 2)
+  Volume      BigInt?
+
+  @@id([Symbol, DateTime], map: "PK_STOCK_SPY")
+}

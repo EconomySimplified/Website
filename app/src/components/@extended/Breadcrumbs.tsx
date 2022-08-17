@@ -69,7 +69,7 @@ const Breadcrumbs = ({
 
   // only used for component demo breadcrumbs
   if (currentPath === '/components-overview/breadcrumbs') {
-    currentPath = '/dashboard/analytics';
+    currentPath = '/dashboard/bond-market';
   }
 
   // set active item state
