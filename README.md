@@ -10,6 +10,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 See the [Mantis Dashboard Documentation](https://codedthemes.gitbook.io/mantis/) for this specific application template.
 
+## Installation
+
+1. Get API Keys
+2. Clone the repo
+   ```sh
+   git clone https://github.com/username/project.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install next react react-dom
+   ```
+4. Enter your API keys in the follow files
+   * `/app/.env`
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Available Scripts
 
 After cloning the repo, cd into the app folder. You need this step in order to start the debug engine properly. 
